@@ -30,7 +30,7 @@ public class Usuario {
         }
 
     public String getNombre() {
-        return nombre;
+        return nombre;      // probando git
     }
 
     public void setNombre(String nombre)    {

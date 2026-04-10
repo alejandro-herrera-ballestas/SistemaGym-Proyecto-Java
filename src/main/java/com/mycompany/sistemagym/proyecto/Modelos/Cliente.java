@@ -8,8 +8,8 @@ public class Cliente extends Usuario {
 
     public Cliente(){}
 
-    public Cliente(String nombre, String apellido, String email, String telefono, Plan planContratado, float peso, float altura, boolean estado) {
-        super(nombre, apellido, email, telefono);
+    public Cliente(String nombre, int edad, int id, String eps,String sexo, int telefono, String correo, Plan planContratado, float peso, float altura, boolean estado) {
+        super(nombre, edad, id, eps, sexo, telefono, correo);
         this.planContratado = planContratado;
         this.peso = peso;
         this.altura = altura;
