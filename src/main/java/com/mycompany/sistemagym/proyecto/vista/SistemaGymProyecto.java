@@ -14,8 +14,15 @@ public class SistemaGymProyecto {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        scanner.close();
         
-        //PARANGARICUTIRIMICUARO
+        do{
+            int opcion; 
+            
+            System.out.println("=====GYM=====");
+            System.out.println("1. ");
+            
+            
+        }while(opcion != 0);
+        
     }
 }
