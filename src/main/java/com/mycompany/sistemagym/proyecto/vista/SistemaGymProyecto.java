@@ -15,8 +15,9 @@ public class SistemaGymProyecto {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
+        int opcion=0;
+        
         do{
-            int opcion; 
             
             System.out.println("=====GYM=====");
             System.out.println("1. ");

@@ -4,10 +4,33 @@
  */
 package com.mycompany.sistemagym.proyecto.Modelos;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author USUARIO
  */
 public class Tienda {
     
+    private ArrayList <Producto> inventario;
+
+    public Tienda() {
+    }
+
+    
+    public Tienda(ArrayList<Producto> inventario) {
+        this.inventario = inventario;
+    }
+
+    public ArrayList<Producto> getInventario() {
+        return inventario;
+    }
+
+    public void setInventario(Producto producto) {
+        this.inventario.add(producto);
+    }
+    
+    public void encargarProducto(){
+        
+    }
 }
