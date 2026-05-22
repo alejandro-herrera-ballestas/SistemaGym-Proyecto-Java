@@ -5,6 +5,7 @@
 package com.mycompany.sistemagym.proyecto.Modelos;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -30,7 +31,32 @@ public class Tienda {
         this.inventario.add(producto);
     }
     
-    public void encargarProducto(){
+    public void addProducto(){
+        Scanner leerProd = new Scanner(System.in);
         
+        System.out.println("\t------ AÑADIR PRODUCTO ------");
+        
+        System.out.println("\nIngrese el Nombre del producto a añadir: ");
+        String nombre = leerProd.nextLine();
+        
+        System.out.println("Ingrese el tipo de producto a añadir:");
+        String tipoProducto = leerProd.nextLine();
+        
+        System.out.println("Ingrese el codigo del producto a añadir: ");
+        int codigo = leerProd.nextInt();
+        
+        System.out.println("Ingrese el Stock del producto a añadir / La cantidad que quiere añadir: ");
+        int stock = leerProd.nextInt();
+        
+        System.out.println("Ingrese el Precio del prodcuto a añadir: ");
+        int precio = leerProd.nextInt();
+        
+        Producto nuevoProducto = new Producto(nombre, tipoProducto, codigo, stock, precio);
+        
+        this.inventario.add(nuevoProducto);
+        
+        System.out.println("\n\t---- PRODUCTO REGISTRADO CORRECTAMENTE ----");
+        
+        leerProd.close();
     }
 }

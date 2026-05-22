@@ -24,6 +24,6 @@ public class SistemaGymProyecto {
             
             
         }while(opcion != 0);
-        
+        scanner.close();
     }
 }

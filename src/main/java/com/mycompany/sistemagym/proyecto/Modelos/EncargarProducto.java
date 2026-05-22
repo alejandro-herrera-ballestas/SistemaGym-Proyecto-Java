@@ -64,11 +64,4 @@ public class EncargarProducto {
         return resultado;
     }
    
-    public Producto encontrarProducto(String nombre, Tienda tienda){
-        
-        
-        for(int i = 0; i< tienda.getInventario().size() )
-        
-        
-    }
 }
