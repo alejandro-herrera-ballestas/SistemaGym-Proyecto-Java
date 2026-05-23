@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package com.mycompany.sistemagym.proyecto.vista;
+package com.mycompany.sistemagym.proyecto.vista.miapp;
 
 import java.util.Scanner;
 
