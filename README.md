@@ -12,15 +12,4 @@ Proyecto en desarrollo. Actualmente se ha implementado la estructura principal d
 - Lectura de productos almacenados
 - Conteo de registros en archivo binario
 
-## Estructura del sistema
-src/main/java/com/mycompany/sistemagym/proyecto/
-│
-├── Modelos/
-│   ├── Usuario.java
-│   ├── Cliente.java
-│   ├── Empleado.java
-│   ├── Plan.java
-│
-└── vista/
-    └── SistemaGymProyecto.java
 
