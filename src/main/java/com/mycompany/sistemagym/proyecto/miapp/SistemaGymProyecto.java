@@ -28,9 +28,9 @@ public class SistemaGymProyecto {
         
         System.out.println(c1);
         
-        RegistroTurno turno1 = new RegistroTurno(e1, 5.30, 11.00, "23 mayo");
         
-        System.out.println(turno1);
+        
+        
         
         scanner.close();
     }

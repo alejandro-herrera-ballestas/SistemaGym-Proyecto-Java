@@ -98,9 +98,8 @@ public class Invitado extends Usuario {
         this.entradaHabilitada = habilitarEntrada;
     }
     
-    public boolean calculoDiasCumplidos(){ //Contar los dias, si son mas de 90 dias desde que entró de invitado, puede volver
-                                           // a entrar, si es menos, no se puede habilitar la entrada, puse void para que 
-                                           //no este rojo pero es boolean
+    public boolean calculoDiasCumplidos(){ 
+                                           
         DateTimeFormatter formato =
                 DateTimeFormatter.ofPattern("dd/MM/yyyy");      //formato de la fecha
 

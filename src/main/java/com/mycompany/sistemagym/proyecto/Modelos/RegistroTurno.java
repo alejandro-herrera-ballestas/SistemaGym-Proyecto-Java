@@ -1,23 +1,23 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.sistemagym.proyecto.Modelos;
 
-/**
- *
- * @author USUARIO
- */
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 public class RegistroTurno {
+
     private Empleado datosEmpleado;
-    private double horaEntrada;
-    private double horaSalida;
-    private String fecha;
+    private LocalTime horaEntrada;
+    private LocalTime horaSalida;
+    private LocalDate fecha;
 
     public RegistroTurno() {
     }
 
-    public RegistroTurno(Empleado datosEmpleado, double horaEntrada, double horaSalida, String fecha) {
+    public RegistroTurno(Empleado datosEmpleado,
+                         LocalTime horaEntrada,
+                         LocalTime horaSalida,
+                         LocalDate fecha) {
+
         this.datosEmpleado = datosEmpleado;
         this.horaEntrada = horaEntrada;
         this.horaSalida = horaSalida;
@@ -32,35 +32,35 @@ public class RegistroTurno {
         this.datosEmpleado = datosEmpleado;
     }
 
-    public double getHoraEntrada() {
+    public LocalTime getHoraEntrada() {
         return horaEntrada;
     }
 
-    public void setHoraEntrada(double horaEntrada) {
+    public void setHoraEntrada(LocalTime horaEntrada) {
         this.horaEntrada = horaEntrada;
     }
 
-    public double getHoraSalida() {
+    public LocalTime getHoraSalida() {
         return horaSalida;
     }
 
-    public void setHoraSalida(double horaSalida) {
+    public void setHoraSalida(LocalTime horaSalida) {
         this.horaSalida = horaSalida;
     }
 
-    public String getFecha() {
+    public LocalDate getFecha() {
         return fecha;
     }
 
-    public void setFecha(String fecha) {
+    public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
     }
 
     @Override
     public String toString() {
-        return "RegistroTurno{" + "datosEmpleado=" + datosEmpleado + ", horaEntrada=" + horaEntrada + ", horaSalida=" + horaSalida + ", fecha=" + fecha + '}';
+
+        return "Fecha: " + fecha +
+               ", Hora entrada: " + horaEntrada +
+               ", Hora salida: " + horaSalida;
     }
-    
-    
-    
 }

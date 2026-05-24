@@ -8,6 +8,7 @@ public class Cliente extends Usuario {
     private float altura;
     private boolean estado;
     private ArrayList <Invitado> invitados;
+    private double IMC;
 
     public Cliente(){}
 
@@ -118,7 +119,7 @@ public class Cliente extends Usuario {
         System.out.println("\nEstado: " + this.estado);
 
         System.out.println("\n\n\t---- IMC: ----");
-        private double IMC;
+        
         IMC = getPeso() / (getAltura() * getAltura() );
         System.out.println("El IMC del cliente " + getNombre() + " es: " + IMC);
     }
