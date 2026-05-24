@@ -1,13 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.mycompany.sistemagym.proyecto.Modelos;
 
-/**
- *
- * @author USUARIO
- */
+import java.util.Scanner;
+
 public class EncargarProducto {
     
     private int codigo;
@@ -57,6 +52,31 @@ public class EncargarProducto {
     public void setCostoTotal(int costoTotal) {
         this.costoTotal = costoTotal;
     }
+    
+    public void encontrarProduct(Tienda tienda) {
+
+    Scanner product = new Scanner(System.in);
+
+    System.out.println("Ingrese el codigo del producto a buscar: ");
+
+    int codigoBuscado = product.nextInt();
+
+    for (int i = 0; i < tienda.getInventario().size(); i++) {
+
+        Producto producto =
+                tienda.getInventario().get(i);
+
+        if (producto.getCodigo() == codigoBuscado) {
+
+            System.out.println("Producto encontrado:");
+            System.out.println(producto);
+
+            return;
+        }
+    }
+
+    System.out.println("Producto no encontrado.");
+}
     
     public double calcularCostoPedido(int costoUnidad, int cantidad){
         

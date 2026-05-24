@@ -16,8 +16,8 @@ public class Tienda {
     private ArrayList <Producto> inventario;
 
     public Tienda() {
+        inventario = new ArrayList<>();
     }
-
     
     public Tienda(ArrayList<Producto> inventario) {
         this.inventario = inventario;
