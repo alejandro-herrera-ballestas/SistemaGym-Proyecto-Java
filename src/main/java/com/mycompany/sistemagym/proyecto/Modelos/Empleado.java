@@ -10,10 +10,8 @@ public class Empleado extends Usuario {
     public Empleado() {
     }
 
-    public Empleado(ArrayList<String> estudios, ArrayList<RegistroTurno> historialTurnos, String nombre, int edad, int id, String eps, String sexo, int telefono, String correo) {
+    public Empleado(String nombre, int edad, int id, String eps, String sexo, int telefono, String correo) {
         super(nombre, edad, id, eps, sexo, telefono, correo);
-        this.estudios = estudios;
-        this.historialTurnos = historialTurnos;
     }
 
     public ArrayList<String> getEstudios() {
@@ -36,25 +34,14 @@ public class Empleado extends Usuario {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
     public int getEdad() {
         return edad;
-    }
-
-    public void setEdad(int edad) {
-        this.edad = edad;
     }
 
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getEps() {
         return eps;
@@ -90,7 +77,9 @@ public class Empleado extends Usuario {
 
     @Override
     public String toString() {
-        return "Empleado{" + "estudios=" + estudios + ", historialTurnos=" + historialTurnos + '}';
+        return "Empleado{" + "Nombre: "+ nombre + ", Edad: "+ edad + ", Id: "+ id + ", Eps: "+ eps +  
+                ", Sexo: "+ sexo + ", Telefono: "+ telefono + ", Correo: "+ correo + 
+                ", estudios=" + estudios + ", historialTurnos=" + historialTurnos + '}';
     }
     
     

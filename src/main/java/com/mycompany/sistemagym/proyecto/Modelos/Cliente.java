@@ -11,16 +11,57 @@ public class Cliente extends Usuario {
 
     public Cliente(){}
 
-    public Cliente(Plan planContratado, float peso, float altura, boolean estado, ArrayList<Invitado> invitados, String nombre, int edad, int id, String eps, String sexo, int telefono, String correo) {
+    public Cliente( String nombre, int edad, int id, String eps, String sexo, int telefono, String correo,Plan planContratado, float peso, float altura, boolean estado) {
         super(nombre, edad, id, eps, sexo, telefono, correo);
         this.planContratado = planContratado;
         this.peso = peso;
         this.altura = altura;
         this.estado = estado;
-        this.invitados = invitados;
     }
 
-    
+    public String getNombre() {
+        return nombre;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public String getEps() {
+        return eps;
+    }
+
+    public void setEps(String eps) {
+        this.eps = eps;
+    }
+
+    public int getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(int telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
 
     public float getPeso() {
         return peso;
@@ -45,63 +86,6 @@ public class Cliente extends Usuario {
     public void setEstado(boolean estado) {
         this.estado = estado;
     }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public int getEdad() {
-        return edad;
-    }
-
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getEps() {
-        return eps;
-    }
-
-    public void setEps(String eps) {
-        this.eps = eps;
-    }
-
-    public String getSexo() {
-        return sexo;
-    }
-
-    public void setSexo(String sexo) {
-        this.sexo = sexo;
-    }
-
-    public int getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(int telefono) {
-        this.telefono = telefono;
-    }
-
-    public String getCorreo() {
-        return correo;
-    }
-
-    public void setCorreo(String correo) {
-        this.correo = correo;
-    }
-
     
     public void actualizarPlan(Plan nuevoPlan) {
         this.planContratado = nuevoPlan;

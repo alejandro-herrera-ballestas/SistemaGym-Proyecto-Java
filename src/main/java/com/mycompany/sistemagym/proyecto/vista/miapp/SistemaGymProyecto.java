@@ -4,6 +4,10 @@
 
 package com.mycompany.sistemagym.proyecto.vista.miapp;
 
+import com.mycompany.sistemagym.proyecto.Modelos.Cliente;
+import com.mycompany.sistemagym.proyecto.Modelos.Empleado;
+import com.mycompany.sistemagym.proyecto.Modelos.Plan;
+import com.mycompany.sistemagym.proyecto.Modelos.RegistroTurno;
 import java.util.Scanner;
 
 /**
@@ -14,16 +18,20 @@ public class SistemaGymProyecto {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        Plan plan=new Plan("basico",1000, "1 mes", 5);
         
-        int opcion=0;
+        Cliente c1 = new Cliente("Aaron",19,01,"Salud total", "Hombre", 1234567890,"aa@",plan,68,170,true);
+        Empleado e1 = new Empleado("aaron",19,02,"Salud total", "Hombre", 1234567890, "aa@");
+        System.out.println(c1);
         
-        do{
-            
-            System.out.println("=====GYM=====");
-            System.out.println("1. ");
-            
-            
-        }while(opcion != 0);
+        c1.setEstado(false); c1.setTelefono(987654321);
+        
+        System.out.println(c1);
+        
+        RegistroTurno turno1 = new RegistroTurno(e1, 5.30, 11.00, "23 mayo");
+        
+        System.out.println(turno1);
+        
         scanner.close();
     }
 }

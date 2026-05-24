@@ -26,10 +26,6 @@ public class Tienda {
     public ArrayList<Producto> getInventario() {
         return inventario;
     }
-
-    public void setInventario(Producto producto) {
-        this.inventario.add(producto);
-    }
     
     public void addProducto(){
         Scanner leerProd = new Scanner(System.in);
@@ -59,4 +55,12 @@ public class Tienda {
         
         leerProd.close();
     }
+
+    @Override
+    public String toString() {
+        return "Tienda{" + "inventario=" + inventario + '}';
+    }
+    
+    
+    
 }
