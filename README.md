@@ -5,11 +5,7 @@ con el objetivo de organizar y manejar información de usuarios, clientes, emple
 
 ## Estado del proyecto
 
-Proyecto en desarrollo. Actualmente se ha implementado la estructura principal de clases y la lógica base del sistema.
+Proyecto en desarrollo. Actualmente se ha implementado la estructura principal, las funcionalidades del sitema y se esta iniciando con la parte visual del proyecto.
 
-## Funcionalidades
-- Registro de productos
-- Lectura de productos almacenados
-- Conteo de registros en archivo binario
 
 
