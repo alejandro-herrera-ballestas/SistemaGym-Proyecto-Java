@@ -3,6 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.sistemagym.proyecto.Modelos;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 
 /**
  *
@@ -95,12 +98,29 @@ public class Invitado extends Usuario {
         this.entradaHabilitada = habilitarEntrada;
     }
     
-    public void calculoDiasCumplidos(){ //Contar los dias, si son mas de 90 dias desde que entró de invitado, puede volver
+    public boolean calculoDiasCumplidos(){ //Contar los dias, si son mas de 90 dias desde que entró de invitado, puede volver
                                            // a entrar, si es menos, no se puede habilitar la entrada, puse void para que 
                                            //no este rojo pero es boolean
-        
-        
-        
+        DateTimeFormatter formato =
+                DateTimeFormatter.ofPattern("dd/MM/yyyy");      //formato de la fecha
+
+        LocalDate fechaInvitado =
+                LocalDate.parse(fechaEntrada, formato);         // convertir de string a formato de fecha
+
+        LocalDate hoy = LocalDate.now();
+        long dias =
+                ChronoUnit.DAYS.between(fechaInvitado, hoy);        // calcular dias
+
+        if (dias >= 90) {
+            entradaHabilitada = true;
+        } else {
+            entradaHabilitada = false;
+        }
+
+        return entradaHabilitada;
+
+
+
     }
     
     

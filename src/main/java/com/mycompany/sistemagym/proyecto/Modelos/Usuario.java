@@ -9,13 +9,13 @@ package com.mycompany.sistemagym.proyecto.Modelos;
  * @author imnot
  */
 public abstract class Usuario {
-    String nombre;
-    int edad;
-    int id;
-    String eps;
-    String sexo;
-    int telefono;
-    String correo;
+    protected String nombre;
+    protected int edad;
+    protected int id;
+    protected String eps;
+    protected String sexo;
+    protected int telefono;
+    protected String correo;
 
         public Usuario(){} 
 

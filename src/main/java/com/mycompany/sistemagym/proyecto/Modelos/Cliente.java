@@ -103,6 +103,30 @@ public class Cliente extends Usuario {
         this.invitados.add(invitados);
     }
 
+    public void cliente()   {
+        System.out.println("\t---- DATOS DEL CLIENTE ----\n");
+        System.out.println("Nombre: " + getNombre());
+        System.out.println("\nEdad: " + getEdad());
+        System.out.println("\nID: " + getId());
+        System.out.println("\nEPS: " + getEps());
+        System.out.println("\nSexo: " + getSexo());
+        System.out.println("\nTelefono: " + getCorreo());
+        System.out.println("\nCorreo: " + getCorreo());
+        System.out.println("\nPlan Contratado: " + getPlanContratado());
+        System.out.println("\nPeso: " + getPeso());
+        System.out.println("\nAltura: " + getAltura());
+        System.out.println("\nEstado: " + this.estado);
+
+        System.out.println("\n\n\t---- IMC: ----");
+        private double IMC;
+        IMC = getPeso() / (getAltura() * getAltura() );
+        System.out.println("El IMC del cliente " + getNombre() + " es: " + IMC);
+    }
+
+    public void agginvitados(Plan planContratado, Invitado invitado) {
+
+    }
+
     @Override
     public String toString() {
         return "Cliente{" + "planContratado=" + planContratado + ", peso=" + peso + ", altura=" + altura + ", estado=" + estado + ", invitados=" + invitados + '}';

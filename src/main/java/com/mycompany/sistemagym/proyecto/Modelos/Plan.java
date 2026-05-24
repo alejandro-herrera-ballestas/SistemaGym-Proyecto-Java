@@ -8,6 +8,7 @@ public class Plan {
     private String duracionPlan;
     private int numInvitadosMes;
 
+
     public Plan() {}
     
     public Plan(String nombrePlan, int precioPlan, String duracionPlan, int numInvitadosMes) {
@@ -35,8 +36,6 @@ public class Plan {
             else if(respuesta.equalsIgnoreCase("No")) {
             System.out.println("Pago cancelado por el usuario. No se ha realizado ningún cargo.");
         }
-        
-        
     }
     
     public String getNombrePlan() {
