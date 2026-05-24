@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package com.mycompany.sistemagym.proyecto.vista.miapp;
+package com.mycompany.sistemagym.proyecto.miapp;
 
 import com.mycompany.sistemagym.proyecto.Modelos.Cliente;
 import com.mycompany.sistemagym.proyecto.Modelos.Empleado;
