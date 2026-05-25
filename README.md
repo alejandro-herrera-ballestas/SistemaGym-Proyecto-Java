@@ -1,11 +1,22 @@
-# SistemaGym - Proyecto en Java
+# SistemaGym-Proyecto-Java
 
-SistemaGym es una aplicación desarrollada en Java que permite simular la gestión básica de un gimnasio. El sistema está diseñado utilizando principios de programación orientada a objetos, 
-con el objetivo de organizar y manejar información de usuarios, clientes, empleados y planes de membresía.
+Proyecto colaborativo desarrollado en Java para la gestión de un gimnasio.  
+Permite administrar clientes, productos, membresías y otras funcionalidades relacionadas con un sistema de gimnasio.
 
-## Estado del proyecto
+## 📂 Estructura del proyecto
 
-Proyecto en desarrollo. Actualmente se ha implementado la estructura principal, las funcionalidades del sitema y se esta iniciando con la parte visual del proyecto.
+El proyecto está organizado en paquetes para separar modelos, lógica y funcionalidades del sistema.
 
+## ⚙️ Requisitos
 
+Antes de ejecutar el proyecto asegúrate de tener instalado:
 
+- JDK 17 o superior
+- NetBeans IDE (recomendado)
+
+## ▶️ Cómo ejecutar el proyecto
+
+1. Clona el repositorio:
+
+```bash
+git clone https://github.com/alejandro-herrera-ballestas/SistemaGym-Proyecto-Java.git
