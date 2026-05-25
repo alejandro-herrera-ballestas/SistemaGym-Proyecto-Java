@@ -28,6 +28,18 @@ public abstract class Usuario {
             this.telefono = telefono;
             this.correo = correo;
         }
-
+        
+    public String getNombre() { return nombre; }
+    public int getEdad() { return edad; }
+    public int getId() { return id; }
+    public String getEps() { return eps; }
+    public void setEps(String eps) { this.eps = eps; }
+    public String getSexo() { return sexo; }
+    public int getTelefono() { return telefono; }
+    public void setTelefono(int telefono) { this.telefono = telefono; }
+    public String getCorreo() { return correo; }
+    public void setCorreo(String correo) { this.correo = correo; }
+    
+    public abstract void mostrarInfo();
     
 }

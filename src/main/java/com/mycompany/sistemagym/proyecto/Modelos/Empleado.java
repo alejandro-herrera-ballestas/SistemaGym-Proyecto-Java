@@ -38,51 +38,6 @@ public class Empleado extends Usuario {
     public void setHistorialTurnos(RegistroTurno turnoRegistrado) {
         this.historialTurnos.add(turnoRegistrado);
     }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public int getEdad() {
-        return edad;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-
-    public String getEps() {
-        return eps;
-    }
-
-    public void setEps(String eps) {
-        this.eps = eps;
-    }
-
-    public String getSexo() {
-        return sexo;
-    }
-
-    public void setSexo(String sexo) {
-        this.sexo = sexo;
-    }
-
-    public int getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(int telefono) {
-        this.telefono = telefono;
-    }
-
-    public String getCorreo() {
-        return correo;
-    }
-
-    public void setCorreo(String correo) {
-        this.correo = correo;
-    }
     
    public void registrarTurno() {
 
@@ -128,11 +83,18 @@ public class Empleado extends Usuario {
 }
 
     @Override
-    public String toString() {
-        return "Empleado{" + "Nombre: "+ nombre + ", Edad: "+ edad + ", Id: "+ id + ", Eps: "+ eps +  
-                ", Sexo: "+ sexo + ", Telefono: "+ telefono + ", Correo: "+ correo + 
-                ", estudios=" + estudios + ", historialTurnos=" + historialTurnos + '}';
-    }
+    public void mostrarInfo() {
+        System.out.println("---- DATOS DEL EMPLEADO ----");
+        System.out.println("Nombre: " + getNombre());
+        System.out.println("\nEdad: " + getEdad());
+        System.out.println("\nID: " + getId());
+        System.out.println("\nEPS: " + getEps());
+        System.out.println("\nTelefono: " + getTelefono());
+        System.out.println("\nCorreo: " + getCorreo());
+        System.out.println("Estudios: " + getEstudios());
+        System.out.println("Historial de turnos: " + getHistorialTurnos());
+        
+        }
     
     
 }

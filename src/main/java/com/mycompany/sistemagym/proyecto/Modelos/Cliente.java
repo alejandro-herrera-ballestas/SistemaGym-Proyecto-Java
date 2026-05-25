@@ -20,50 +20,6 @@ public class Cliente extends Usuario {
         this.estado = estado;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getSexo() {
-        return sexo;
-    }
-
-    public int getEdad() {
-        return edad;
-    }
-
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
-
-    public String getEps() {
-        return eps;
-    }
-
-    public void setEps(String eps) {
-        this.eps = eps;
-    }
-
-    public int getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(int telefono) {
-        this.telefono = telefono;
-    }
-
-    public String getCorreo() {
-        return correo;
-    }
-
-    public void setCorreo(String correo) {
-        this.correo = correo;
-    }
-
     public float getPeso() {
         return peso;
     }
@@ -104,33 +60,28 @@ public class Cliente extends Usuario {
         this.invitados.add(invitados);
     }
 
-    public void cliente()   {
-        System.out.println("\t---- DATOS DEL CLIENTE ----\n");
-        System.out.println("Nombre: " + getNombre());
-        System.out.println("\nEdad: " + getEdad());
-        System.out.println("\nID: " + getId());
-        System.out.println("\nEPS: " + getEps());
-        System.out.println("\nSexo: " + getSexo());
-        System.out.println("\nTelefono: " + getCorreo());
-        System.out.println("\nCorreo: " + getCorreo());
-        System.out.println("\nPlan Contratado: " + getPlanContratado());
-        System.out.println("\nPeso: " + getPeso());
-        System.out.println("\nAltura: " + getAltura());
-        System.out.println("\nEstado: " + this.estado);
-
+    public void calcIMC()   {
         System.out.println("\n\n\t---- IMC: ----");
         
         IMC = getPeso() / (getAltura() * getAltura() );
         System.out.println("El IMC del cliente " + getNombre() + " es: " + IMC);
     }
 
-    public void agginvitados(Plan planContratado, Invitado invitado) {
-
+@Override
+    public void mostrarInfo() {
+    System.out.println("\t---- DATOS DEL CLIENTE ----\n");
+        System.out.println("Nombre: " + getNombre());
+        System.out.println("\nEdad: " + getEdad());
+        System.out.println("\nID: " + getId());
+        System.out.println("\nEPS: " + getEps());
+        System.out.println("\nSexo: " + getSexo());
+        System.out.println("\nTelefono: " + getTelefono());
+        System.out.println("\nCorreo: " + getCorreo());
+        System.out.println("\nPlan Contratado: " + getPlanContratado());
+        System.out.println("\nPeso: " + getPeso());
+        System.out.println("\nAltura: " + getAltura());
+        System.out.println("\nEstado: " + this.estado);
+    
     }
-
-    @Override
-    public String toString() {
-        return "Cliente{" + "planContratado=" + planContratado + ", peso=" + peso + ", altura=" + altura + ", estado=" + estado + ", invitados=" + invitados + '}';
-    }
-
 }
+    

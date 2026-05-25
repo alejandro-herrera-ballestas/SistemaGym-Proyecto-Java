@@ -3,85 +3,67 @@ package com.mycompany.sistemagym.proyecto.Modelos;
 
 import java.util.Scanner;
 
-public class EncargarProducto {
+public class EncargarProducto extends TransaccionProducto{
     
-    private int codigo;
-    private int cantidad;
-    private int constoUnidad;
-    private int costoTotal;
-
-    public EncargarProducto() {
+        private int costoUnidad;
+ 
+    public EncargarProducto() {}
+ 
+    public EncargarProducto(Producto producto, int cantidad, int costoUnidad, String fecha) {
+        super(producto, cantidad, fecha);
+        this.costoUnidad = costoUnidad;
+        this.costoTotal = calcularCosto();
     }
 
-    
-    public EncargarProducto(int codigo, int cantidad, int constoUnidad, int costoTotal) {
-        this.codigo = codigo;
-        this.cantidad = cantidad;
-        this.constoUnidad = constoUnidad;
-        this.costoTotal = costoTotal;
+    public int getCostoUnidad() {
+        return costoUnidad;
     }
-
-    public int getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
-
-    public int getCantidad() {
-        return cantidad;
-    }
-
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
-    }
-
-    public int getConstoUnidad() {
-        return constoUnidad;
-    }
-
-    public void setConstoUnidad(int constoUnidad) {
-        this.constoUnidad = constoUnidad;
-    }
-
-    public int getCostoTotal() {
-        return costoTotal;
-    }
-
-    public void setCostoTotal(int costoTotal) {
-        this.costoTotal = costoTotal;
+ 
+    public void setCostoUnidad(int costoUnidad) {
+        this.costoUnidad = costoUnidad;
+        this.costoTotal = calcularCosto();
     }
     
-    public void encontrarProduct(Tienda tienda) {
+    @Override
+    public double calcularCosto() {
+        return costoUnidad * cantidad;
+    }
 
-    Scanner product = new Scanner(System.in);
-
-    System.out.println("Ingrese el codigo del producto a buscar: ");
-
-    int codigoBuscado = product.nextInt();
-
-    for (int i = 0; i < tienda.getInventario().size(); i++) {
-
-        Producto producto =
-                tienda.getInventario().get(i);
-
-        if (producto.getCodigo() == codigoBuscado) {
-
-            System.out.println("Producto encontrado:");
-            System.out.println(producto);
-
-            return;
+    
+    @Override
+    public void mostrarResumen() {
+        System.out.println("\t---- RESUMEN DE ENCARGO ----");
+        System.out.println("Producto: " + producto.getNombre());
+        System.out.println("Cantidad encargada: " + cantidad);
+        System.out.println("Costo por unidad: $" + costoUnidad);
+        System.out.println("Costo total del pedido: $" + costoTotal);
+        System.out.println("Fecha: " + fecha);
+    }
+ 
+    public void encontrarProducto(Tienda tienda) {
+        Scanner product = new Scanner(System.in);
+        System.out.println("Ingrese el codigo del producto a buscar: ");
+        int codigoBuscado = product.nextInt();
+ 
+        for (Producto p : tienda.getInventario()) {
+            if (p.getCodigo() == codigoBuscado) {
+                System.out.println("Producto encontrado:");
+                System.out.println(p);
+                return;
+            }
         }
+        System.out.println("Producto no encontrado.");
+    }
+ 
+    @Override
+    public String toString() {
+        return "EncargarProducto{" +
+                "producto=" + producto +
+                ", cantidad=" + cantidad +
+                ", costoUnidad=" + costoUnidad +
+                ", costoTotal=" + costoTotal +
+                ", fecha=" + fecha + '}';
     }
 
-    System.out.println("Producto no encontrado.");
-}
-    
-    public double calcularCostoPedido(int costoUnidad, int cantidad){
-        
-        double resultado= costoUnidad * cantidad;
-        return resultado;
-    }
    
 }

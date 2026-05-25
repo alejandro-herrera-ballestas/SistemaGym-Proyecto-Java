@@ -34,62 +34,6 @@ public class Invitado extends Usuario {
         this.fechaEntrada = fechaEntrada;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public int getEdad() {
-        return edad;
-    }
-
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getEps() {
-        return eps;
-    }
-
-    public void setEps(String eps) {
-        this.eps = eps;
-    }
-
-    public String getSexo() {
-        return sexo;
-    }
-
-    public void setSexo(String sexo) {
-        this.sexo = sexo;
-    }
-
-    public int getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(int telefono) {
-        this.telefono = telefono;
-    }
-
-    public String getCorreo() {
-        return correo;
-    }
-
-    public void setCorreo(String correo) {
-        this.correo = correo;
-    }
-
     public boolean isEntradaHabilitada() {
         return entradaHabilitada;
     }
@@ -117,10 +61,17 @@ public class Invitado extends Usuario {
         }
 
         return entradaHabilitada;
-
-
-
     }
+
+    @Override
+        public void mostrarInfo() {
+        System.out.println("---- DATOS DEL INVITADO ----");
+        System.out.println("Nombre: " + getNombre());
+        System.out.println("Fecha entrada: " + getFechaEntrada());
+        System.out.println("\nEdad: " + getEdad());
+        System.out.println("\nTelefono: " + getTelefono());
+        System.out.println("\nCorreo: " + getCorreo());
+        }
     
     
     
