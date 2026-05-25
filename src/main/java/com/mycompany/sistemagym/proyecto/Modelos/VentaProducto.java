@@ -20,13 +20,11 @@ public class VentaProducto extends TransaccionProducto {
     public void setCostoTotal() {
         this.costoTotal = calcularCosto();
     }
-    
-    
+     
         @Override
     public double calcularCosto() {
         return cantidad * producto.getPrecio();
     }
-
 
     @Override
     public void mostrarResumen() {
@@ -37,9 +35,6 @@ public class VentaProducto extends TransaccionProducto {
         System.out.println("Fecha: " + fecha);
     }
     
-    
-
-
         @Override
     public String toString() {
         return "VentaProducto{" +
