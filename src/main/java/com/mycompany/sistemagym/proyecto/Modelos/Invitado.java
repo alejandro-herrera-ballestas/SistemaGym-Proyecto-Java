@@ -19,7 +19,7 @@ public class Invitado extends Usuario {
     public Invitado() {
     }
 
-    public Invitado(String fechaEntrada, boolean entradaHabilitada, String nombre, int edad, int id, String eps, String sexo, int telefono, String correo) {
+    public Invitado(String fechaEntrada, boolean entradaHabilitada, String nombre, int edad, String id, String eps, String sexo, int telefono, String correo) {
         super(nombre, edad, id, eps, sexo, telefono, correo);
         this.fechaEntrada = fechaEntrada;
         this.entradaHabilitada = entradaHabilitada;

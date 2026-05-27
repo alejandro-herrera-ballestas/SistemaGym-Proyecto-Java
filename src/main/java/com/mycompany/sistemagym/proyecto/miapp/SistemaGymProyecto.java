@@ -20,8 +20,8 @@ public class SistemaGymProyecto {
         Scanner scanner = new Scanner(System.in);
         Plan plan=new Plan("basico",1000, "1 mes", 5);
         
-        Cliente c1 = new Cliente("Aaron",19,01,"Salud total", "Hombre", 1234567890,"aa@",plan,68,170,true);
-        Empleado e1 = new Empleado("aaron",19,02,"Salud total", "Hombre", 1234567890, "aa@");
+        Cliente c1 = new Cliente("Aaron",19,"010101", "Salud total", "Hombre", 1234567890,"aa@",plan,68,170,true);
+        Empleado el = new Empleado("aaron",19,"01010102","Salud total", "Hombre", 1234567890, "aa@");
         System.out.println(c1);
         
         c1.setEstado(false); c1.setTelefono(987654321);

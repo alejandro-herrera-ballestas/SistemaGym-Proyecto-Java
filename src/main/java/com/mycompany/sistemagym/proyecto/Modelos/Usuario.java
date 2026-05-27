@@ -11,7 +11,7 @@ package com.mycompany.sistemagym.proyecto.Modelos;
 public abstract class Usuario {
     protected String nombre;
     protected int edad;
-    protected int id;
+    protected String id;
     protected String eps;
     protected String sexo;
     protected int telefono;
@@ -19,7 +19,7 @@ public abstract class Usuario {
 
         public Usuario(){} 
 
-        public Usuario(String nombre, int edad, int id, String eps, String sexo, int telefono, String correo) {
+        public Usuario(String nombre, int edad, String id, String eps, String sexo, int telefono, String correo) {
             this.nombre = nombre;
             this.edad = edad;
             this.id = id;
@@ -31,7 +31,7 @@ public abstract class Usuario {
         
     public String getNombre() { return nombre; }
     public int getEdad() { return edad; }
-    public int getId() { return id; }
+    public String getId() { return id; }
     public String getEps() { return eps; }
     public void setEps(String eps) { this.eps = eps; }
     public String getSexo() { return sexo; }

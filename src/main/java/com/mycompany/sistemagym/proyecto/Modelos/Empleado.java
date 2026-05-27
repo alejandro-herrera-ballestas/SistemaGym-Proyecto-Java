@@ -16,7 +16,7 @@ public class Empleado extends Usuario {
         estudios = new ArrayList<>();
     }
 
-    public Empleado(String nombre, int edad, int id, String eps, String sexo, int telefono, String correo) {
+    public Empleado(String nombre, int edad, String id, String eps, String sexo, int telefono, String correo) {
         super(nombre, edad, id, eps, sexo, telefono, correo);
         
         historialTurnos = new ArrayList<>();
