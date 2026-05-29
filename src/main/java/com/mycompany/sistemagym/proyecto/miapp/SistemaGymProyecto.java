@@ -26,11 +26,7 @@ public class SistemaGymProyecto {
         
         c1.setEstado(false); c1.setTelefono(987654321);
         
-        System.out.println("hola mundo");
-        
-        
-        
-        
+        System.out.println();
         
         scanner.close();
     }
