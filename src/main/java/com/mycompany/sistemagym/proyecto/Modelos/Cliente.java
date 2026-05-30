@@ -10,7 +10,9 @@ public class Cliente extends Usuario {
     private ArrayList <Invitado> invitados;
     private double IMC;
 
-    public Cliente(){}
+    public Cliente(){
+    invitados = new ArrayList<>();
+    }
 
     public Cliente(String nombre, int edad, String id, String eps, String sexo, int telefono, String correo,Plan planContratado, float peso, float altura, boolean estado) {
         super(nombre, edad, id, eps, sexo, telefono, correo);
