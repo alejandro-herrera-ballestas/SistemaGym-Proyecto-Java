@@ -17,7 +17,12 @@ public class SistemaGymProyecto {
     static ControladorProducto ctrlProducto = new ControladorProducto();
     static ControladorVenta    ctrlVenta    = new ControladorVenta();
     static ControladorAdmin    ctrlAdmin    = new ControladorAdmin();
+    
 
+
+
+    
+    static GestorCSV gestorCSV = new GestorCSV();
     static Scanner sc = new Scanner(System.in);
 
     // =====================================================================
@@ -43,6 +48,10 @@ public class SistemaGymProyecto {
         } while (opcion != 0);
 
         sc.close();
+
+
+    }
+
     }
 
     // =====================================================================
