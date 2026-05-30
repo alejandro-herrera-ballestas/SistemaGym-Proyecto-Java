@@ -3,6 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.sistemagym.proyecto.Modelos;
+import com.mycompany.sistemagym.proyecto.controladores.controladorCliente;
+import com.mycompany.sistemagym.proyecto.controladores.ControladorEmpleado;
+import com.mycompany.sistemagym.proyecto.controladores.ControladorPlan;
 
 /**
  *
