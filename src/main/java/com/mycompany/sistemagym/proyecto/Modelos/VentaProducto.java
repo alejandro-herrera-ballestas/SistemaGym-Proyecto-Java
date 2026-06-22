@@ -44,5 +44,13 @@ public class VentaProducto extends TransaccionProducto {
                 ", fecha=" + fecha + '}';
     }
 
-    
+    public void validarStock() throws StockInsuficienteException {
+        if (cantidad > producto.getStock()) {
+            throw new StockInsuficienteException(
+                "Stock insuficiente para " + producto.getNombre(),
+                producto.getStock(),
+                cantidad
+            );
+        }
+    }
 }

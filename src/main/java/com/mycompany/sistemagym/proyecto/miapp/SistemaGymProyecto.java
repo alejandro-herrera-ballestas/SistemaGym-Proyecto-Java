@@ -481,35 +481,43 @@ public class SistemaGymProyecto {
     }
 
     static void registrarVenta() {
-        titulo("REGISTRAR VENTA");
-        List<Producto> lista = ctrlProducto.listarProductos();
-        if (lista.isEmpty()) { System.out.println("  No hay productos en inventario."); return; }
+    titulo("REGISTRAR VENTA");
+    List<Producto> lista = ctrlProducto.listarProductos();
+    if (lista.isEmpty()) { System.out.println("  No hay productos en inventario."); return; }
 
-        System.out.println("\n  Productos disponibles:");
-        for (int i = 0; i < lista.size(); i++)
-            System.out.printf("    [%d] %-20s | Stock: %-4d | $%d%n",
-                    i + 1, lista.get(i).getNombre(),
-                    lista.get(i).getStock(), lista.get(i).getPrecio());
+    System.out.println("\n  Productos disponibles:");
+    for (int i = 0; i < lista.size(); i++)
+        System.out.printf("    [%d] %-20s | Stock: %-4d | $%d%n",
+                i + 1, lista.get(i).getNombre(),
+                lista.get(i).getStock(), lista.get(i).getPrecio());
 
-        int idx = leerInt("  Seleccione producto") - 1;
-        if (idx < 0 || idx >= lista.size()) { System.out.println("  Seleccion invalida."); return; }
+    int idx = leerInt("  Seleccione producto") - 1;
+    if (idx < 0 || idx >= lista.size()) { System.out.println("  Seleccion invalida."); return; }
 
-        Producto prod = lista.get(idx);
-        int cantidad  = leerInt("  Cantidad a vender");
-        if (cantidad > prod.getStock()) {
-            System.out.println("  Stock insuficiente. Disponible: " + prod.getStock());
-            return;
-        }
+    // --- A PARTIR DE AQUÍ ES LO QUE CAMBIA ---
+    Producto prod = lista.get(idx);
+    int cantidad  = leerInt("  Cantidad a vender");
 
-        String fecha = LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-        VentaProducto venta = new VentaProducto(prod, cantidad, fecha);
+    String fecha = LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+    VentaProducto venta = new VentaProducto(prod, cantidad, fecha);
+
+    try {
+        venta.validarStock();
+
         double total = ctrlVenta.procesarVenta(venta);
-
         prod.setStock(prod.getStock() - cantidad);
 
         venta.mostrarResumen();
         System.out.println("\n  [OK] Venta registrada. Total cobrado: $" + total);
+
+    } catch (StockInsuficienteException e) {
+        System.out.println("  [ERROR] " + e.getMessage());
+        System.out.println("  Disponible: " + e.getStockDisponible() + " | Solicitado: " + e.getCantidadSolicitada());
+
+    } finally {
+        System.out.println("  Proceso de venta finalizado.");
     }
+}
 
     static void historialVentas() {
         titulo("HISTORIAL DE VENTAS");
