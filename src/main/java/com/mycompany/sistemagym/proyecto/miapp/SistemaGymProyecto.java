@@ -29,7 +29,13 @@ public class SistemaGymProyecto {
     //  MAIN
     // =====================================================================
     public static void main(String[] args) {
-        cargarDatosDemostracion();
+        boolean cargado = gestorCSV.cargarTodo(ctrlCliente, ctrlEmpleado, ctrlPlan, ctrlProducto, ctrlVenta);
+        if (!cargado) {
+            System.out.println("    No se encontraron datos guardados. Cargando datos de demostracion...");
+            cargarDatosDemostracion();
+        }   else    {
+            System.out.println("    Datos Cargados con exito");
+        }
 
         int opcion;
         do {
@@ -46,13 +52,15 @@ public class SistemaGymProyecto {
                 default -> System.out.println("  Opcion invalida. Intente de nuevo.");
             }
         } while (opcion != 0);
-
+        
+       gestorCSV.guardarTodo(ctrlPlan.listarPlanes(), ctrlCliente.listarClientes(), ctrlEmpleado.listarEmpleados(), ctrlProducto.listarProductos(), ctrlVenta.listarVentas());
+        System.out.println("    Datos guardados con exito en el archivo");
         sc.close();
 
 
     }
 
-    }
+    
 
     // =====================================================================
     //  MENU PRINCIPAL
