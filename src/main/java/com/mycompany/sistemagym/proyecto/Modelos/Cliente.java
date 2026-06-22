@@ -85,5 +85,15 @@ public class Cliente extends Usuario {
         System.out.println("\nEstado: " + this.estado);
     
     }
+    public void mostrarInfo(boolean detallado) {
+    if (!detallado) {
+        System.out.println("\t---- RESUMEN DEL CLIENTE ----");
+        System.out.println("Nombre: " + getNombre());
+        System.out.println("ID: " + getId());
+        System.out.println("Estado: " + (estado ? "ACTIVO" : "INACTIVO"));
+    } else {
+        mostrarInfo();
+    }
+}
 }
     

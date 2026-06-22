@@ -152,12 +152,15 @@ public class SistemaGymProyecto {
     }
 
     static void buscarCliente() {
-        titulo("BUSCAR CLIENTE");
-        System.out.print("  Ingrese ID del cliente: "); String id = sc.nextLine();
-        Cliente c = ctrlCliente.buscarCliente(id);
-        if (c == null) System.out.println("  Cliente no encontrado.");
-        else           c.mostrarInfo();
-    }
+    titulo("BUSCAR CLIENTE");
+    System.out.print("  Ingrese ID del cliente: "); String id = sc.nextLine();
+    Cliente c = ctrlCliente.buscarCliente(id);
+    if (c == null) { System.out.println("  Cliente no encontrado."); return; }
+
+    System.out.print("  Ver detalle completo? (Si/No): ");
+    String resp = sc.nextLine();
+    c.mostrarInfo(resp.equalsIgnoreCase("Si"));
+}
 
     static void listarClientes() {
         titulo("LISTADO DE CLIENTES");

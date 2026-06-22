@@ -61,6 +61,8 @@ public class Tienda {
         return "Tienda{" + "inventario=" + inventario + '}';
     }
     
-    
+    public void addProducto(Producto p) {
+    this.inventario.add(p);
+}
     
 }

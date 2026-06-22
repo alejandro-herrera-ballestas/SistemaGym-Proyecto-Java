@@ -75,5 +75,12 @@ public class Plan {
         System.out.println("Duración: " + this.duracionPlan);
         System.out.println("Número de invitados por mes: " + this.numInvitadosMes);
     }
+    public void consultPlan() {
+        System.out.println("Detalles del plan: ");
+        System.out.println("Nombre: " + this.nombrePlan);
+        System.out.println("Duración: " + this.duracionPlan);
+        System.out.println("Número de invitados por mes: " + this.numInvitadosMes);
+        System.out.println("Precio: $" + this.precioPlan);
+    }
 }
 
