@@ -1,0 +1,21 @@
+[PLANES]
+Básico,80000,1 mes,2
+Estándar,140000,1 mes,4
+Premium,220000,1 mes,8
+
+[CLIENTES]
+Carlos Pérez,28,1001,Sura,M,300123456,carlos@mail.com,Básico,75.0,1.75,true
+Laura Gómez,34,1002,Sanitas,F,300987654,laura@mail.com,Estándar,60.0,1.62,true
+Miguel Torres,22,1003,Nueva EPS,M,300456123,miguel@mail.com,Premium,85.0,1.8,false
+
+[EMPLEADOS]
+Ana Rueda,30,E001,Coomeva,F,310111223,ana@gym.com,Lic. Educación Física
+Jorge Silva,25,E002,Sura,M,320444556,jorge@gym.com,Técnico en Ventas
+
+[PRODUCTOS]
+Proteína Whey,Suplemento,101,50,120000
+Creatina 500g,Suplemento,102,30,80000
+Botella Térmica,Accesorio,104,15,45000
+Guantes Gym,Accesorio,103,20,35000
+
+[VENTAS]

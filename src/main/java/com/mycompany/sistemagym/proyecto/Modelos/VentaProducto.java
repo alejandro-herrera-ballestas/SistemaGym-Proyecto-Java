@@ -1,14 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.sistemagym.proyecto.Modelos;
 
+import com.mycompany.sistemagym.proyecto.Interfaces.IPagable;
+
 /**
- *
- * @author USUARIO
+ * Representa una venta de producto. Extiende TransaccionProducto e implementa
+ * IPagable, demostrando implementación de interfaz + herencia múltiple de comportamiento.
  */
-public class VentaProducto extends TransaccionProducto {
+public class VentaProducto extends TransaccionProducto implements IPagable {
 
     public VentaProducto() {}
 
@@ -16,12 +14,12 @@ public class VentaProducto extends TransaccionProducto {
         super(producto, cantidad, fecha);
         this.costoTotal = calcularCosto();
     }
-    
+
     public void setCostoTotal() {
         this.costoTotal = calcularCosto();
     }
-     
-        @Override
+
+    @Override
     public double calcularCosto() {
         return cantidad * producto.getPrecio();
     }
@@ -34,16 +32,26 @@ public class VentaProducto extends TransaccionProducto {
         System.out.println("Costo total: $" + costoTotal);
         System.out.println("Fecha: " + fecha);
     }
-    
-        @Override
-    public String toString() {
-        return "VentaProducto{" +
-                "producto=" + producto +
-                ", cantidadVendida=" + cantidad +
-                ", costoTotal=" + costoTotal +
-                ", fecha=" + fecha + '}';
+
+    // ---- Implementación de IPagable ----
+    @Override
+    public double calcularTotal() {
+        return calcularCosto();
     }
 
+    @Override
+    public boolean procesarPago() {
+        if (producto == null || cantidad <= 0) return false;
+        return cantidad <= producto.getStock();
+    }
+
+    @Override
+    public String getDescripcionPago() {
+        return "Venta de " + cantidad + "x " + producto.getNombre()
+                + " — Total: $" + costoTotal + " — Fecha: " + fecha;
+    }
+
+    // ---- Validación de stock ----
     public void validarStock() throws StockInsuficienteException {
         if (cantidad > producto.getStock()) {
             throw new StockInsuficienteException(
@@ -52,5 +60,14 @@ public class VentaProducto extends TransaccionProducto {
                 cantidad
             );
         }
+    }
+
+    @Override
+    public String toString() {
+        return "VentaProducto{" +
+                "producto=" + producto +
+                ", cantidadVendida=" + cantidad +
+                ", costoTotal=" + costoTotal +
+                ", fecha=" + fecha + '}';
     }
 }
